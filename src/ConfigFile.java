@@ -1,7 +1,5 @@
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
-import twitter4j.TwitterStream;
-import twitter4j.TwitterStreamFactory;
 import twitter4j.conf.ConfigurationBuilder;
 
 /*
@@ -39,16 +37,6 @@ public class ConfigFile {
 		return tf;
 	}
 	
-	/*
-	 * Creates a new TwitterStreamFactory object to be used to create a new TwitterStream
-	 * object and connect the config settings to the Streaming API code.
-	 */
-	private static TwitterStreamFactory createStreamFactory() {
-		ConfigurationBuilder cb = configure();
-		TwitterStreamFactory tsf = new TwitterStreamFactory(cb.build());
-		
-		return tsf;
-	}
 	
 	/*
 	 * Creates new Twitter object to be used to make api calls
@@ -60,14 +48,4 @@ public class ConfigFile {
 		return twitter;
 	}
 	
-	/*
-	 * Creates new TwitterStream object to connect the configuration and OAuth information
-	 * to the Streaming API classes.
-	 */
-	public static TwitterStream createStream() {
-		TwitterStreamFactory tsf = createStreamFactory();
-		TwitterStream twitterStream = tsf.getInstance();
-		
-		return twitterStream;
-	}
 }
